@@ -1,0 +1,7 @@
+{
+    "name": "RemoteGroup",
+    "base": "group",
+    "plural": "Groups",
+    "trackChanges": false,
+    "enableRemoteReplication": true
+}

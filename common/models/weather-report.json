@@ -1,0 +1,102 @@
+{
+  "name": "weatherreport",
+  "plural": "WeatherReports",
+  "base": "PersistedModel",
+  "strict": "validate",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "trackChanges": true,
+  "persistUndefinedAsNull": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "defaultFn": "guid"
+    },
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "positionId": {
+      "type": "string",
+      "required": true
+    },
+    "cloudCover": {
+      "type": "string"
+    },
+    "precipitation": {
+      "type": "string"
+    },
+    "visibility": {
+      "type": "string"
+    },
+    "pressureTendency": {
+      "type": "string"
+    },
+    "pressureValue": {
+      "type": "string"
+    },
+    "temperatureValue": {
+      "type": "string"
+    },
+    "temperatureUnits": {
+      "type": "string"
+    },
+    "windValue": {
+      "type": "string"
+    },
+    "windUnits": {
+      "type": "string"
+    },
+    "windDirection": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "other": {
+      "type": "string"
+    },
+    "attachment": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "MobileUser": {
+      "type": "belongsTo",
+      "model": "mobile_user",
+      "foreignKey": "userId"
+    },
+    "Position": {
+      "type": "belongsTo",
+      "model": "position",
+      "foreignKey": "positionId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "REPLICATE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "checkpoint"
+    }
+  ],
+  "methods": []
+}

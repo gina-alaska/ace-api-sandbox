@@ -1,0 +1,3 @@
+# This directory contains uploads and is used as the root of the storage component
+# Thus, everything in this directory is ignored except this file (of course)
+!.gitignore

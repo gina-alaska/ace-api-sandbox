@@ -1,0 +1,8 @@
+{
+    "name": "RemoteMobileUser",
+    "base": "mobile_user",
+    "plural": "MobileUsers",
+    "trackChanges": false,
+    "enableRemoteReplication": true
+}
+    

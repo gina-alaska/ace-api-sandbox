@@ -1,0 +1,7 @@
+{
+    "name": "RemoteSettings",
+    "base": "settings",
+    "plural": "Settings",
+    "trackChanges": false,
+    "enableRemoteReplication": true
+}

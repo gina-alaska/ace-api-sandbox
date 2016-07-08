@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "sources": ["../../common/models", "./models"]
+  },
+  "LocalGroup": {
+    "dataSource": "local"
+  },
+  "RemoteGroup": {
+    "dataSource": "remote"
+  },
+  "LocalMobileUser": {
+    "dataSource": "local"
+  },
+  "RemoteMobileUser": {
+      "dataSource": "remote"
+  },
+  "LocalPosition": {
+      "dataSource": "local"
+  },
+  "RemotePosition": {
+      "dataSource": "remote"   
+  },
+  "LocalWeatherReport": {
+      "dataSource": "local"
+  },
+  "RemoteWeatherReport": {
+      "dataSource": "remote"
+  },
+  "LocalSettings": {
+    "dataSource": "local"
+  },
+  "RemoteSettings": {
+    "dataSource": "remote"
+  }
+}

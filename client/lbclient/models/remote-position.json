@@ -1,0 +1,7 @@
+{
+    "name": "RemotePosition",
+    "base": "position",
+    "plural": "Positions",
+    "trackChanges": false,
+    "enableRemoteReplication": true
+}
