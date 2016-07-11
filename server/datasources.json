@@ -8,10 +8,5 @@
     "connector": "loopback-component-storage",
     "provider": "filesystem",
     "root": "./server/storage"
-  },
-  "mongo": {
-    "url": "mongodb://ace_api_user:acepassword@ds053251.mongolab.com:53251/ace_db",
-    "name": "mongo",
-    "connector": "mongodb"
   }
 }
