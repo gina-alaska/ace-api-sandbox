@@ -3,7 +3,8 @@ module.exports = function(app) {
 	var RoleMapping = app.models.RoleMapping;
 
 	app.models.group.create([{name: 'TestUsers'}], function(err, group) {
-		app.models.mobile_user.create([{username: 'testuser', password: 'password', email: 'test@test.com', groupId: group[0].id, apikey: ''}], function(err, user) {
+		app.models.mobile_user.create([{username: 'testuser', password: 'password', email: 'test@test.com', groupId: group[0].id, apikey: 'none'}], function(err, user) {
+			console.log('Created user:', user[0].username);
 			app.models.position.create([{
 				userId: user[0].id,
 				timestamp: '2016-06-08T20:19:04.151Z',

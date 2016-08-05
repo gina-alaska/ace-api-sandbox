@@ -157,6 +157,18 @@
       "principalId": "admin",
       "permission": "ALLOW",
       "property": "updateAttributes"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY",
+      "property": "create"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "create"
     }
   ],
   "methods": []
