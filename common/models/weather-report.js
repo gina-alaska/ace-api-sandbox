@@ -3,25 +3,31 @@ module.exports = function(Weatherreport) {
 		console.warn("Cannot update change records for WeatherReport: ", err);
 	};
 
-	Weatherreport.withPositions = function(userId, date, cb) {
+	Weatherreport.withPositions = function(groupId, startDate, endDate, cb) {
 		Weatherreport.find({
-			include: {
+			include: [{
 				relation: 'Position',
 				scope: {
 					where: {
 						timestamp: {
-							gte: new Date(date)
+							gte: new Date(startDate),
+							lte: new Date(endDate)
 						}
 					}
 				}
 			},
-			where: {
-				userId: userId
-			}
+			{
+				relation: 'MobileUser',
+				scope: {
+					where: {
+						groupId: groupId
+					}
+				}
+			}]
 		}, function(err, results) {
 			if (err) return cb(err);
 			var filteredResults = results.filter(function (result) {
-				return result.Position();
+				return result.Position() && result.MobileUser();
 			});
 			cb(null, filteredResults);
 		});
@@ -30,8 +36,9 @@ module.exports = function(Weatherreport) {
 	Weatherreport.remoteMethod('withPositions', {
 		http: {path: '/with-positions', verb: 'get'},
 		accepts: [
-			{arg: 'userId', type: 'string', 'http': {source: 'query'}, required: true},
-			{arg: 'date', type: 'string', 'http': {source: 'query'}, required: true}
+			{arg: 'groupId', type: 'string', 'http': {source: 'query'}, required: true},
+			{arg: 'startdate', type: 'string', 'http': {source: 'query'}, required: true},
+			{arg: 'enddate', type: 'string', 'http': {source: 'query'}, required: true}
 		],
 		returns: {arg: 'WeatherReports', type: 'string'}
 	});

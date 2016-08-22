@@ -2,7 +2,7 @@ module.exports = function(app) {
 	var Role = app.models.Role;
 	var RoleMapping = app.models.RoleMapping;
 
-	app.models.mobile_user.create([{username: 'admin', password: 'password', email: 'test@test.com', apikey: 'none'}], function(err, user) {
+	app.models.mobile_user.create([{username: 'admin', password: 'password', email: 'test@test.com', apikey: ''}], function(err, user) {
 		console.log('Created user:', user[0].username);
 		app.models.position.create([{
 			userId: user[0].id,
