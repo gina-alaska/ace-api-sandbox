@@ -7,7 +7,7 @@
 1. Clone this repository and change into its directory:
 
    ```bash
-   git clone https://github.com/cstephen/ace-api-sandbox.git
+   git clone https://github.com/gina-alaska/ace-api-sandbox.git
    cd ace-api-sandbox
    ```
 
